@@ -19,3 +19,6 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+from work.crawling import task_crawling_naver  # 호출하는 부분
+task_crawling_naver(schedule = 60, repeat = 60*30)
